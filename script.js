@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ── Mobile menu toggle ──
-const toggle    = document.getElementById('mobileToggle');
+const toggle = document.getElementById('mobileToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
 toggle.addEventListener('click', () => {
@@ -16,11 +16,11 @@ toggle.addEventListener('click', () => {
   const spans = toggle.querySelectorAll('span');
   if (isOpen) {
     spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-    spans[1].style.opacity   = '0';
+    spans[1].style.opacity = '0';
     spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
   } else {
     spans[0].style.transform = '';
-    spans[1].style.opacity   = '';
+    spans[1].style.opacity = '';
     spans[2].style.transform = '';
   }
 });
@@ -31,7 +31,7 @@ document.querySelectorAll('.mobile-link').forEach(link => {
     mobileMenu.classList.remove('open');
     const spans = toggle.querySelectorAll('span');
     spans[0].style.transform = '';
-    spans[1].style.opacity   = '';
+    spans[1].style.opacity = '';
     spans[2].style.transform = '';
   });
 });
@@ -53,7 +53,7 @@ document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(
 
 // ── Active nav link on scroll ──
 const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link');
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -89,7 +89,7 @@ if (axisImg) {
 document.addEventListener('mousemove', (e) => {
   const glow = document.querySelector('.axis-glow');
   if (!glow) return;
-  const xFactor = (e.clientX / window.innerWidth  - 0.5) * 20;
+  const xFactor = (e.clientX / window.innerWidth - 0.5) * 20;
   const yFactor = (e.clientY / window.innerHeight - 0.5) * 20;
   glow.style.transform = `translate(calc(-50% + ${xFactor}px), calc(-50% + ${yFactor}px))`;
 }, { passive: true });
@@ -98,3 +98,50 @@ document.addEventListener('mousemove', (e) => {
 document.querySelectorAll('.hero [data-reveal]').forEach((el, i) => {
   setTimeout(() => el.classList.add('revealed'), 200 + i * 150);
 });
+
+// ── AJAX Form Submission (No Redirects) ──
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault(); // Stop the default redirect
+
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
+    submitBtn.innerText = 'Enviando...';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(this);
+
+    fetch(this.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json' // Tell FormSubmit we want a JSON response, not an HTML page
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          submitBtn.innerText = '¡Enviado con éxito!';
+          submitBtn.style.backgroundColor = 'oklch(68% 0.22 145)'; // Green success color
+          this.reset();
+        } else {
+          submitBtn.innerText = 'Error al enviar';
+          submitBtn.style.backgroundColor = 'oklch(60% 0.2 25)'; // Red error color
+        }
+      })
+      .catch(error => {
+        submitBtn.innerText = 'Error de conexión';
+        submitBtn.style.backgroundColor = 'oklch(60% 0.2 25)';
+      })
+      .finally(() => {
+        // Reset the button after 4 seconds
+        setTimeout(() => {
+          submitBtn.innerText = originalText;
+          submitBtn.disabled = false;
+          submitBtn.style.backgroundColor = ''; // Back to default CSS
+        }, 4000);
+      });
+  });
+}
+
