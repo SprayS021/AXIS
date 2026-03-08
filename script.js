@@ -113,7 +113,10 @@ if (contactForm) {
 
     const formData = new FormData(this);
 
-    fetch(this.action, {
+    // FormSubmit requires the /ajax/ endpoint for background fetch requests to avoid CORS errors
+    const ajaxAction = this.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+
+    fetch(ajaxAction, {
       method: "POST",
       body: formData,
       headers: {
@@ -144,4 +147,5 @@ if (contactForm) {
       });
   });
 }
+
 
