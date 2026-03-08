@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXIS — Desarrollo en FiveM</title>
+  <meta name="description"
+    content="Somos un grupo de diseñadores y programadores de FiveM con más de 2 años de experiencia, especializados en scripts, UI/UX y bots personalizados." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon" style="display: flex; align-items: center; gap: 0.5rem;">
+          <img src="images/axis-icon.png" alt="AXIS Symbol" class="axis-symbol"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'" />
+          <span class="axis-symbol-fallback" style="display:none; font-size: 1.5rem; color: white;">✳</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#sobre-nosotros" class="nav-link">Acerca de Nosotros</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#hero" class="mobile-link">Home</a></li>
+      <li><a href="#sobre-nosotros" class="mobile-link">Acerca de Nosotros</a></li>
+      <li><a href="#contacto" class="mobile-link">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <!-- Background image placeholder -->
+    <div class="hero-bg">
+      <div class="hero-bg-overlay"></div>
+      <img src="images/hero-bg.png" alt="" class="hero-bg-img" onerror="this.style.display='none'" />
+    </div>
+
+    <!-- Subtle grid lines decoration -->
+    <div class="hero-grid-lines" aria-hidden="true">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-brand" data-reveal>
+        <div class="axis-logo-group">
+          <div class="axis-logo-img-wrap">
+            <!-- AXIS logo placeholder — put images/axis-logo.png -->
+            <img src="images/axis-logo.png" alt="AXIS" class="axis-logo-img" onerror="this.style.display='none'" />
+            <div class="axis-logo-fallback" id="axisLogoFallback">
+              <span class="axis-text">AX<span class="axis-accent">I</span>S</span>
+            </div>
+            <div class="axis-glow"></div>
+          </div>
+          <div class="hero-tagline">
+            <span>Desarrollo en</span>
+            <span class="fivem-badge">Fivem</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-description" data-reveal>
+        <p class="hero-subtitle">Actualmente Desarrollando AXIS RP <em>(Proyecto personal)</em></p>
+        <p class="hero-body">
+          Somos un grupo de diseñadores y programadores de FiveM con más de 2
+          años de experiencia, los cuales abarcamos diferentes áreas dentro del
+          desarrollo de servidores y la administración de los mismos.
+        </p>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- NOS CENTRAMOS EN -->
+  <section class="section focus-section" id="focus">
+    <div class="container">
+      <h2 class="section-title underlined" data-reveal>NOS CENTRAMOS EN:</h2>
+      <div class="focus-grid" data-reveal>
+
+        <div class="focus-card">
+          <div class="focus-icon lua-icon">
+            <img src="images/icons/lua.png" alt="Lua" onerror="this.innerHTML='<span>Lua</span>'" />
+          </div>
+          <div class="focus-info">
+            <h3>LUA Para Codigo Principal</h3>
+            <span class="focus-tag">Framework: QBCORE</span>
+          </div>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon js-icon">
+            <img src="images/icons/js.png" alt="JavaScript" onerror="this.innerHTML='<span>JS</span>'" />
+          </div>
+          <div class="focus-info">
+            <h3>JavaScript Para Desarrollo UI</h3>
+          </div>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon html-icon">
+            <img src="images/icons/html5.png" alt="HTML5" onerror="this.innerHTML='<span>HTML</span>'" />
+          </div>
+          <div class="focus-info">
+            <h3>HTML Para Desarrollo UI</h3>
+          </div>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon css-icon">
+            <img src="images/icons/css3.png" alt="CSS3" onerror="this.innerHTML='<span>CSS</span>'" />
+          </div>
+          <div class="focus-info">
+            <h3>CSS Para Desarrollo UI</h3>
+          </div>
+        </div>
+
+        <div class="focus-card focus-card--wide">
+          <div class="focus-icon discord-icon">
+            <img src="images/icons/discord.png" alt="Discord" onerror="this.innerHTML='<span>🤖</span>'" />
+          </div>
+          <div class="focus-info">
+            <h3>DISCORD BOT'S</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS PROPIOS -->
+  <section class="section scripts-section" id="scripts">
+    <div class="container scripts-inner">
+      <div class="scripts-text" data-reveal>
+        <p class="section-label">AXIS</p>
+        <h2 class="scripts-heading">SCRIPTS PROPIOS</h2>
+        <div class="scripts-description">
+          <p>
+            Actualmente hemos desarrollado diferentes tipos y clases de script's
+            entre ellos podemos encontrar:<br />
+            <strong>Reportes / Policia / SAMS / Tp's / Dimensiones / Peds / Animaciones</strong>
+          </p>
+          <a href="https://docs.google.com/presentation/d/1ASWtWM3bhyNrqUo8w0vrn-gWSdvG3qJA2cktMFJOV04/edit?usp=sharing"
+            target="_blank" rel="noopener noreferrer" class="btn btn-primary">MAS INFO</a>
+        </div>
+      </div>
+      <div class="scripts-preview" data-reveal>
+        <!-- Code screenshot placeholder — put images/scripts-preview.png -->
+        <img src="images/scripts-preview.png" alt="Script preview" class="scripts-img"
+          onerror="this.parentElement.classList.add('no-img')" />
+        <div class="code-block-fallback">
+          <div class="code-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-filename">server/main.lua</span>
+          </div>
+          <pre class="code-sample"><span class="kw">local</span> <span class="var">QBCore</span> = <span class="fn">exports</span>[<span class="str">'qb-core'</span>]:<span class="fn">GetCoreObject</span>()
+
+<span class="kw">AddEventHandler</span>(<span class="str">'onServerResourceStart'</span>, <span class="kw">function</span>(<span class="var">resource</span>)
+  <span class="kw">if</span> <span class="var">resource</span> == <span class="fn">GetCurrentResourceName</span>() <span class="kw">then</span>
+    <span class="var">QBCore</span>.<span class="fn">Functions</span>.<span class="fn">CreateCallback</span>(<span class="str">'axis:getData'</span>,
+      <span class="kw">function</span>(<span class="var">source</span>, <span class="var">cb</span>)
+        <span class="var">cb</span>({ <span class="var">status</span> = <span class="str">"ok"</span> })
+      <span class="kw">end</span>)
+  <span class="kw">end</span>
+<span class="kw">end</span>)</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDISEÑOS VISUALES -->
+  <section class="section redesign-section" id="redesign">
+    <div class="container redesign-inner">
+      <div class="redesign-preview" data-reveal>
+        <!-- Screenshot placeholder — put images/redesign-preview.png -->
+        <img src="images/redesign-preview.png" alt="Rediseño visual" class="redesign-img"
+          onerror="this.parentElement.classList.add('no-img')" />
+        <div class="ui-mock-fallback">
+          <div class="ui-mock-header">
+            <span class="ui-mock-logo">AxisBank</span>
+            <nav class="ui-mock-nav">
+              <span>Inicio</span>
+              <span>Operaciones</span>
+              <span>Transferir</span>
+              <span class="active">Ajustes</span>
+            </nav>
+          </div>
+          <div class="ui-mock-body">
+            <div class="ui-mock-sidebar">
+              <div class="ui-mock-balance">Saldo: <strong>$0</strong></div>
+              <div class="ui-mock-accounts">
+                <div class="account-item">Cuenta Personal</div>
+                <div class="account-item">Fondos Estatales</div>
+              </div>
+            </div>
+            <div class="ui-mock-content">
+              <div class="ui-mock-form-group">
+                <label>Tarjetas de débito</label>
+                <input type="text" placeholder="Nuevo PIN" disabled />
+                <button>Solicitar nueva tarjeta</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="redesign-text" data-reveal>
+        <p class="section-label">AXIS</p>
+        <h2 class="redesign-heading">REDISEÑOS VISUALES DE SCRIPTS</h2>
+        <p>
+          Rediseño de script's ya creados en fivem o de otros creadores,
+          añadir o quitar funcionalidades, incluso agregar Logs compatibles
+          con Discord, etc...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTS PERSONALIZADOS -->
+  <section class="section bots-section" id="bots">
+    <div class="container bots-inner">
+      <div class="bots-text" data-reveal>
+        <p class="section-label">AXIS</p>
+        <h2 class="bots-heading">BOTS PERSONALIZADOS</h2>
+        <div class="bots-card">
+          <p>
+            BOT's creados para funciones especificas como
+            verificacion automatica, conteo de horas semanales o mensuales,
+            whitelist, registros, tickets, entre otros...
+          </p>
+        </div>
+      </div>
+      <div class="bots-preview" data-reveal>
+        <!-- Discord screenshot — put images/bots-preview.png -->
+        <img src="images/bots-preview.png" alt="Bot personalizado" class="bots-img"
+          onerror="this.parentElement.classList.add('no-img')" />
+        <div class="discord-mock-fallback">
+          <div class="discord-mock-header">
+            <div class="discord-avatar">
+              <img src="images/sapd-icon.png" alt="SAPD" onerror="this.style.display='none'" />
+              <div class="discord-avatar-fallback">🛡️</div>
+            </div>
+            <div class="discord-info">
+              <div class="discord-name">Jefatura SAPD <span class="discord-badge">APP</span></div>
+              <div class="discord-tag">Jefatura SAPD#1109</div>
+            </div>
+            <div class="discord-online"></div>
+          </div>
+          <div class="discord-tabs">
+            <span>Información</span>
+            <span class="active">4 servidores en común</span>
+            <span>Acceso a datos</span>
+          </div>
+          <div class="discord-dev">Developed by: <strong>Zirax_Z</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="section about-section" id="sobre-nosotros">
+    <div class="container">
+      <h2 class="section-title underlined" data-reveal>Sobre Nosotros:</h2>
+      <div class="about-body" data-reveal>
+        <p>
+          Nuestro equipo se consolidó hace aproximadamente dos años. Nos conocimos en Evolución RP (Servidor de Origen
+          Network), donde compartimos como parte del STAFF en ese momento, infinidad de situaciones que nos permitieron
+          entender toda la dinámica de un servidor desde adentro. Tras cerrar esa etapa por motivos personales,
+          decidimos
+          que era el momento de usar esa experiencia en un proyecto propio.
+        </p>
+        <p>
+          En ese entonces creíamos que lo teníamos todo, con la parte de código y la gestión administrativa, pero
+          desarrollar
+          un proyecto conlleva mas que eso. Entendimos que un servidor de calidad no se limita solo a los scripts;
+          requiere un
+          aprendizaje constante en áreas que antes no dominábamos: desde la búsqueda y optimización de mapeados, peds y
+          ropa, hasta el diseño de funciones internas que realmente conecten a las facciones y los usuarios.
+        </p>
+        <p>
+          Hoy, ese camino de aprendizaje nos permite ofrecer un trabajo mucho mas complejo. No solo instalamos scripts,
+          sino
+          que los modificamos o creamos desde cero según la necesidad, buscando siempre mejorar lo que ya existe.
+          Pasamos
+          de ser un grupo que quería "hacer algo" a un equipo que sabe exactamente lo que un servidor necesita para
+          funcionar y perdurar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="section team-section" id="equipo">
+    <div class="container">
+      <div class="team-grid" data-reveal>
+
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="images/team/sprays.gif" alt="sprayS"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="team-avatar-initials">sS</div>
+          </div>
+          <span class="team-name">sprayS</span>
+        </div>
+
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="images/team/judaguay.png" alt="Judaguay"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="team-avatar-initials">Jg</div>
+          </div>
+          <span class="team-name">Judaguay</span>
+        </div>
+
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="images/team/miniswampert.gif" alt="Miniswampert"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="team-avatar-initials">Mw</div>
+          </div>
+          <span class="team-name">Miniswampert</span>
+        </div>
+
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="images/team/zirax.png" alt="Zirax_Z"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="team-avatar-initials">Zz</div>
+          </div>
+          <span class="team-name">Zirax_Z</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section contact-section" id="contacto">
+    <div class="container contact-inner">
+      <h2 class="section-title" data-reveal>Contacto</h2>
+      <p class="contact-subtitle" data-reveal>¿Interesado en trabajar con nosotros? Envianos un mensaje.</p>
+      <div class="contact-grid" id="contactGrid">
+        <div class="contact-links" data-reveal>
+          <a href="https://discordapp.com/users/464578219111219202" target="_blank" rel="noopener noreferrer"
+            class="contact-card new-card">
+            <div class="contact-icon new-icon">
+              <img src="images/icons/discord.png" alt="Discord"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+              <span style="display:none;">💬</span>
+            </div>
+            <span>Discord</span>
+          </a>
+          <!-- Gmail now triggers the form instead of opening mailto directly -->
+          <a href="#contacto" class="contact-card new-card" onclick="
+            document.getElementById('contactFormWrapper').style.display='block'; 
+            document.getElementById('contactGrid').classList.add('form-open');
+            return false;">
+            <div class="contact-icon new-icon">
+              <img src="images/icons/gmail.png" alt="Gmail"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+              <span style="display:none;">✉️</span>
+            </div>
+            <span>G Mail</span>
+          </a>
+        </div>
+
+        <!-- Contact Form Wrapper (Hidden by default) -->
+        <div class="contact-form-wrapper" id="contactFormWrapper" style="display: none;" data-reveal>
+          <form class="contact-form" action="https://formsubmit.co/axisrp21@gmail.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde la web AXIS">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" placeholder="Ej: Cotización de Script" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Descripción</label>
+              <textarea id="message" name="message" rows="5" placeholder="Detalla tu consulta aquí..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit-btn">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo" style="display: flex; align-items: center; gap: 0;">
+          <img src="images/axis-icon.png" alt="AXIS Symbol" class="axis-symbol"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'" />
+          <span class="axis-symbol-fallback" style="display:none; font-size: 1.2rem; color: white;">✳</span>
+          <span
+            style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.05em; color: white; margin-left: -20px;">AXIS</span>
+        </div>
+        <p>© 2024 AXIS. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#hero">Home</a>
+        <a href="#sobre-nosotros">Acerca de Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
